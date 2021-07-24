@@ -2,10 +2,15 @@ import React from "react";
 
 export function TrafficLight(props) {
 	const [color, setColor] = React.useState("yellow");
-	const redDivClass = "red" + (color === "red" ? " selected" : "");
 	return (
 		<div>
-			<div className="topoflight"></div>
+			<div
+				onClick={() => {
+					setColor("");
+				}}
+				className={
+					"topoflight" + (color === "null" ? " selected" : "")
+				}></div>
 			<div className="main">
 				<div
 					onClick={() => {
